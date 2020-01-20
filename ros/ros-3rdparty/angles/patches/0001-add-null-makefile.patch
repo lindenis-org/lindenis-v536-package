@@ -1,0 +1,7 @@
+new file mode 100644
+index 0000000..78aec80
+--- a/dev/null
++++ b/Makefile
+@@ -0,0 +1,2 @@
++all install:
++	$(echo "ok")

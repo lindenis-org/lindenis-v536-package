@@ -1,0 +1,11 @@
+--- a/clients/roscpp/CMakeLists.txt	2018-08-24 02:40:21.000000000 +0800
++++ b/clients/roscpp/CMakeLists.txt	2019-01-10 15:01:41.117806197 +0800
+@@ -24,7 +24,7 @@
+
+ find_package(Boost REQUIRED COMPONENTS chrono filesystem signals system)
+
+-include_directories(include ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/ros ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
++include_directories(include ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION} ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/ros ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+
+ add_message_files(
+   DIRECTORY msg

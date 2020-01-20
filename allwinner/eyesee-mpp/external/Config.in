@@ -1,0 +1,14 @@
+if PACKAGE_eyesee-mpp-external
+
+config mpp_external_uvoice
+	bool "enable uvoice"
+	help
+	  uvoice lib is used to analyse audio to get command.
+	  If need it, enable uvoice libs in mpp-external.
+
+config mpp_external_jsoncpp
+	bool "compile jsoncpp"
+	help
+	  if need jsoncpp, add it.
+
+endif
