@@ -49,6 +49,8 @@ export TARGET_BOARD_PLATFORM
 export LICHEE_PLATFORM_OS:=tina
 ifeq ($(CONFIG_imx317),y)
     SENSOR_NAME:=imx317
+else ifeq ($(CONFIG_imx307),y)
+    SENSOR_NAME:=imx307
 else ifeq ($(CONFIG_imx258),y)
     SENSOR_NAME:=imx258
 else ifeq ($(CONFIG_imx278),y)

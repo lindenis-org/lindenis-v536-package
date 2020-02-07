@@ -9,6 +9,9 @@ choice
 config imx317
 	bool "use sensor imx317"
 
+config imx307
+	bool "use sensor imx307"
+
 config imx278
 	bool "use sensor imx278"
 
