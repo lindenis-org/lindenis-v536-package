@@ -9,9 +9,11 @@ check_ip_timeout_vendor(){
     while [ $timeout -lt $1 ]
     do
         if [ x$2 != x"" ];then
-            ping -c 2 $2
+            #ping -c 2 $2
+            ping $2
         else
-            ping -c 2 $LOCAL_DOMAIN
+            #ping -c 2 $LOCAL_DOMAIN
+            ping $LOCAL_DOMAIN
         fi
         [ $? -eq 0 ] && return 0
         let timeout=$timeout+1
@@ -24,9 +26,11 @@ check_network_vendor(){
     check_ip_timeout_vendor 20 $1
     if [ $? -ne 0 ];then
         #restart the wifi
-        /etc/wifi/wifi restart
+        #/etc/wifi/wifi restart
+        wpa_supplicant -Dnl80211 -iwlan0 -c /overlay/wpa_supplicant.conf -B
         sleep 2
-        /etc/wifi/udhcpc_wlan0 restart
+        #/etc/wifi/udhcpc_wlan0 restart
+        udhcpc -i wlan0
         sleep 2
         check_ip_timeout_vendor 10 $1
         [ $? -ne 0 ] && {

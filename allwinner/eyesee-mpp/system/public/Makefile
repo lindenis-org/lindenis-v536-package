@@ -194,6 +194,8 @@ else ifeq ($(CONFIG_wifi_xr819),y)
 else
 	@echo "no wifi"
 endif
+	$(CP) -v --remove-destination $(SRC_COMPILE_DIR)/wifi/ap_test $(1)/usr/bin 1>&2
+	$(CP) -v --remove-destination $(SRC_COMPILE_DIR)/wifi/sta_test $(1)/usr/bin 1>&2
 	$(CP) $(SRC_COMPILE_DIR)/smartlink/libsmartlink.so $(1)/usr/lib/eyesee-mpp
 	$(CP) $(SRC_COMPILE_DIR)/rgb_ctrl/librgb_ctrl.so $(1)/usr/lib/eyesee-mpp
 	$(CP) $(SRC_COMPILE_DIR)/rgb_ctrl/fonts/asc*.lz4 $(1)/usr/share/osd/fonts/

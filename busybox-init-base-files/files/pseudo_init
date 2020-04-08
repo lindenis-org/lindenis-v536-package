@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MOUNT_ETC=0
-MOUNT_OVERLAY=0
+MOUNT_OVERLAY=1
 
 ################################## functions ##################################
 
@@ -96,7 +96,6 @@ mount_usr(){
 		&& umount /tmp/usr \
 		&& rm -rf /tmp/usr \
 		&& return
-
 	/bin/mount -o move /tmp/usr /usr \
 		&& rm -rf /tmp/usr
 }
@@ -197,7 +196,7 @@ mount_app() {
 
 mount_overlay() {
 
-	local root_dev="$(readlink /dev/by-name/rootfs)"
+	local root_dev="$(readlink /dev/by-name/rootfs_data)"
 
 	mkdir -p /overlay
 
@@ -335,7 +334,7 @@ set_parts_by_name
 
 #mount_sec_storage
 
-#mount_usr
+mount_usr
 [ x"$MOUNT_ETC" = x"1" ] && mount_etc
 [ x"$MOUNT_OVERLAY" = x"1" ] && mount_overlay
 #mount_app

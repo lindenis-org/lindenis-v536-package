@@ -1,3 +1,17 @@
 if PACKAGE_eyesee-mpp-awcdr
 
+choice
+	prompt "select display sink"
+	default hdmi_1080p
+	help
+	  select the display sink for app
+
+config hdmi_1080p
+	bool "use hdmi 1080p"
+
+config lcd_720p
+	bool "use lcd 720p"
+
+endchoice
+
 endif

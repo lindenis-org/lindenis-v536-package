@@ -186,11 +186,20 @@ else ifeq ("$(strip $(TARGET_PRODUCT))", "v316_sdv")
     BOARD_TYPE := PRO
 else ifeq ("$(strip $(TARGET_PRODUCT))", "v536_cdr")
     BOARD_TYPE := C26A
+else ifeq ("$(strip $(TARGET_PRODUCT))", "v536_Lindenis_SOM")
+    BOARD_TYPE := LD1080P
+else ifeq ("$(strip $(TARGET_PRODUCT))", "v536_Lindenis_SBC")
+    BOARD_TYPE := LD1080P
 else ifeq ("$(strip $(TARGET_PRODUCT))", "v533_cdr")
     BOARD_TYPE := C26A
 else
     $(warning "ERROR: TARGET_PRODUCT:$(TARGET_PRODUCT) is unknown, default config will be used")
     BOARD_TYPE := PER1
+endif
+
+
+ifeq ($(CONFIG_lcd_720p),y)
+    BOARD_TYPE := LD720P
 endif
 export BOARD_TYPE
 #config if boot mode is normal or fast
@@ -210,7 +219,7 @@ define Package/$(PKG_NAME)
 endef
 
 define Package/$(PKG_NAME)/config
-#source "$(SOURCE)/Config.in"
+  source "$(SOURCE)/Config.in"
 endef
 
 # Uncomment portion below for Kamikaze and delete DESCRIPTION variable above

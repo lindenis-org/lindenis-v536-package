@@ -434,7 +434,7 @@ define Build/InstallDev
 	if [ -f $(SRC_COMPILE_DIR)/media/LIBRARY/libisp/isp_cfg/libisp_ini.a ]; then \
 		$(CP) $(SRC_COMPILE_DIR)/media/LIBRARY/libisp/isp_cfg/libisp_ini.a $(1)/usr/lib/eyesee-mpp; \
 	fi
-	if [ -f $(CP) $(SRC_COMPILE_DIR)/media/LIBRARY/libisp/isp_dev/libisp_dev.a ]; then \
+	if [ -f $(SRC_COMPILE_DIR)/media/LIBRARY/libisp/isp_dev/libisp_dev.a ]; then \
 		$(CP) $(SRC_COMPILE_DIR)/media/LIBRARY/libisp/isp_dev/libisp_dev.a $(1)/usr/lib/eyesee-mpp; \
 	fi
 	if [ -f $(SRC_COMPILE_DIR)/media/LIBRARY/libisp/libISP.so ]; then \

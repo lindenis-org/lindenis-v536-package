@@ -86,14 +86,14 @@ download_prepare_image(){
             download_image $file /tmp
             download_image $file.md5 /tmp
             $UPGRADE_SH prepare /tmp $file $IS_COMPRESS_IMAGE
-	    file=$BOOT0_IMG
-            download_image $file /tmp
-            download_image $file.md5 /tmp
-            $UPGRADE_SH prepare /tmp $file $IS_COMPRESS_IMAGE
-	    file=$UBOOT_IMG
-            download_image $file /tmp
-            download_image $file.md5 /tmp
-            $UPGRADE_SH prepare /tmp $file $IS_COMPRESS_IMAGE
+            #file=$BOOT0_IMG
+            #download_image $file /tmp
+            #download_image $file.md5 /tmp
+            #$UPGRADE_SH prepare /tmp $file $IS_COMPRESS_IMAGE
+            #file=$UBOOT_IMG
+            #download_image $file /tmp
+            #download_image $file.md5 /tmp
+            #$UPGRADE_SH prepare /tmp $file $IS_COMPRESS_IMAGE
         }
     else
         download_image $1 /tmp
